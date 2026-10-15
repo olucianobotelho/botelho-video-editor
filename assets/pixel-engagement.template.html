@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><title>Botelho Video Editor — participação pixel</title></head>
+<body>
+<template>
+  <!-- Public edition: configurable channel label; generic source paths. -->
+  <!-- Replace EVERY __CTA_ID__ with the host id before saving in compositions/frames/. -->
+  <style>
+    @font-face{font-family:BVECTA;src:url('../../assets/fonts/DepartureMono.woff2') format('woff2');font-weight:400;font-display:block}
+    #__CTA_ID__{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;color:#2455f5;font-family:BVECTA,monospace;background:transparent}
+    #__CTA_ID__ *{box-sizing:border-box}
+    #__CTA_ID__ .engagement-content{position:absolute;left:90px;top:833px;width:1150px;height:161px}
+    #__CTA_ID__ .engagement-caption{position:absolute;left:0;top:0;display:flex;align-items:center;gap:12px;height:30px;padding:0 12px;background:#fff;font-size:16px;line-height:24px;letter-spacing:.5px;white-space:nowrap}
+    #__CTA_ID__ .engagement-caption-mark{width:8px;height:8px;background:#2455f5}
+    #__CTA_ID__ .engagement-actions{position:absolute;inset:40px 0 5px;display:grid;grid-template-columns:250px 520px 330px;gap:20px;align-items:stretch}
+    #__CTA_ID__ .engagement-button{position:relative;display:flex;align-items:center;justify-content:center;gap:17px;width:100%;height:116px;border:3px solid #2455f5;background:#fff;color:#2455f5;box-shadow:5px 5px 0 #dce4ff;transform-origin:50% 50%;overflow:hidden}
+    #__CTA_ID__ .engagement-copy{display:grid;align-items:center;justify-items:start;min-width:0}
+    #__CTA_ID__ .engagement-copy>span{grid-area:1/1;white-space:nowrap;font-size:25px;line-height:34px}
+    #__CTA_ID__ .engagement-subscribe .engagement-copy>span{font-size:33px;line-height:42px}
+    #__CTA_ID__ .engagement-bell .engagement-copy>span{font-size:21px;line-height:29px}
+    #__CTA_ID__ .engagement-state-done{opacity:0}
+    #__CTA_ID__ .engagement-icon{display:block;flex:0 0 auto;width:55px;height:55px;fill:currentColor;shape-rendering:crispEdges}
+    #__CTA_ID__ .engagement-play{width:62px;height:62px}
+    #__CTA_ID__ .engagement-check{position:absolute;left:44px;top:33px;width:48px;height:48px;fill:currentColor;opacity:0}
+    #__CTA_ID__ .engagement-subscribe .engagement-copy{width:300px}
+    #__CTA_ID__ .engagement-subscribe .engagement-icon{margin-left:-4px}
+    #__CTA_ID__ .engagement-ring{fill:none;stroke:currentColor;stroke-width:1.3;stroke-linejoin:miter;opacity:0}
+    #__CTA_ID__ .engagement-cursor{position:absolute;left:0;top:0;width:34px;height:45px;filter:drop-shadow(2px 2px 0 #13223b);transform-origin:5px 3px;opacity:0;z-index:3}
+    #__CTA_ID__ .engagement-cursor svg{display:block;width:34px;height:45px;shape-rendering:crispEdges}
+    #__CTA_ID__ .engagement-corners{position:absolute;inset:8px;border:2px solid currentColor;clip-path:polygon(0 0,17px 0,17px 3px,3px 3px,3px 17px,0 17px,0 0,100% 0,100% 17px,calc(100% - 3px) 17px,calc(100% - 3px) 3px,calc(100% - 17px) 3px,calc(100% - 17px) 0,100% 0,100% 100%,calc(100% - 17px) 100%,calc(100% - 17px) calc(100% - 3px),calc(100% - 3px) calc(100% - 3px),calc(100% - 3px) calc(100% - 17px),100% calc(100% - 17px),100% 100%,0 100%,0 calc(100% - 17px),3px calc(100% - 17px),3px calc(100% - 3px),17px calc(100% - 3px),17px 100%,0 100%);opacity:0;pointer-events:none}
+    /* Adapted from the installed shimmer-sweep registry primitive. Its sweep
+       is confined to a 3px keyline, never a glossy gradient behind the copy. */
+    #__CTA_ID__ .engagement-keyline{position:absolute;inset:0;pointer-events:none;--shimmer-pos:-20%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 0,3px 3px,3px calc(100% - 3px),calc(100% - 3px) calc(100% - 3px),calc(100% - 3px) 3px,3px 3px);background:linear-gradient(115deg,transparent 0%,transparent calc(var(--shimmer-pos) - 10%),#a9c4ff var(--shimmer-pos),transparent calc(var(--shimmer-pos) + 10%),transparent 100%)}
+  </style>
+  <div id="__CTA_ID__" data-composition-id="__CTA_ID__" data-width="1920" data-height="1080" data-duration="8.3">
+    <div class="engagement-content" aria-label="Curta, inscreva-se e ative as notificações de __CHANNEL_NAME__">
+      <div class="engagement-caption"><span class="engagement-caption-mark"></span><span>__CHANNEL_NAME__ / FAZ PARTE</span></div>
+      <div class="engagement-actions">
+        <div class="engagement-button engagement-like">
+          <svg class="engagement-icon engagement-thumb" viewBox="0 0 18 18" aria-label="Curtir"><path d="M1 8H4V16H1ZM5 8H7V6H8V4H9V2H12V3H13V8H16V10H15V13H14V16H5Z"/></svg>
+          <div class="engagement-copy"><span class="engagement-state-before">CURTIR</span><span class="engagement-state-done">CURTIU</span></div>
+          <span class="engagement-corners"></span><span class="engagement-keyline"></span>
+        </div>
+        <div class="engagement-button engagement-subscribe">
+          <svg class="engagement-icon engagement-play" viewBox="0 0 24 24" aria-label="YouTube"><path d="M2 4H22V20H2ZM10 8V16L16 12Z" fill-rule="evenodd"/></svg>
+          <svg class="engagement-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11H5V14H8V17H11V14H14V11H17V8H20V5H23V9H21V12H18V15H15V18H12V21H7V18H4V15H2Z"/></svg>
+          <div class="engagement-copy"><span class="engagement-state-before">INSCREVA-SE</span><span class="engagement-state-done">INSCRITO</span></div>
+          <span class="engagement-corners"></span><span class="engagement-keyline"></span>
+        </div>
+        <div class="engagement-button engagement-bell">
+          <svg class="engagement-icon engagement-bell-icon" viewBox="0 0 20 20" aria-label="Notificações"><g class="engagement-bell-body"><path d="M8 2H12V4H14V6H15V12H17V15H3V12H5V6H6V4H8ZM8 16H12V18H8Z"/></g><g class="engagement-ring"><path d="M2 4V3H4M18 4V3H16M1 6V10M19 6V10"/></g></svg>
+          <div class="engagement-copy"><span class="engagement-state-before">ATIVAR SININHO</span><span class="engagement-state-done">ATIVADO</span></div>
+          <span class="engagement-corners"></span><span class="engagement-keyline"></span>
+        </div>
+      </div>
+      <div class="engagement-cursor" aria-hidden="true"><svg viewBox="0 0 34 45"><path d="M2 2V31L10 25L17 40L23 37L16 23H29Z" fill="#fff" stroke="#2455f5" stroke-width="3" stroke-linejoin="miter"/></svg></div>
+    </div>
+    <!-- Deliberately quiet but audible: wet sample peaks about -26 dBFS for
+         clicks and -29 dBFS for the short bell. Keep source files and 0.4 gain
+         together when reusing this template; do not duplicate sounds in parent. -->
+    <audio id="__CTA_ID__-like-sound" src="../../assets/sfx/cta-soft-click.wav" data-start="1.7" data-hf-media-start-basis="local" data-duration="0.12" data-track-index="0" data-volume="0.4" data-label="CTA / clique curtir"></audio>
+    <audio id="__CTA_ID__-subscribe-sound" src="../../assets/sfx/cta-soft-click.wav" data-start="3.25" data-hf-media-start-basis="local" data-duration="0.12" data-track-index="1" data-volume="0.4" data-label="CTA / clique inscrição"></audio>
+    <audio id="__CTA_ID__-bell-sound" src="../../assets/sfx/cta-soft-bell.wav" data-start="4.8" data-hf-media-start-basis="local" data-duration="0.65" data-track-index="2" data-volume="0.4" data-label="CTA / clique sininho"></audio>
+  </div>
+  <script>
+    (function(){
+      const root=document.getElementById('__CTA_ID__');
+      const find=(selector)=>root.querySelector(selector);
+      const all=(selector)=>root.querySelectorAll(selector);
+      const tl=gsap.timeline({paused:true});
+      const content=find('.engagement-content');
+      const cursor=find('.engagement-cursor');
+      tl.fromTo(content,{opacity:0,y:15},{opacity:1,y:0,duration:.45,ease:'power2.out'},.08);
+      tl.fromTo(all('.engagement-button'),{scale:.97},{scale:1,duration:.48,ease:'back.out(1.2)',stagger:.11},.12);
+      tl.fromTo(cursor,{opacity:0,x:42,y:112},{opacity:1,x:152,y:91,duration:.65,ease:'power2.inOut'},.7);
+      const actions=[{selector:'.engagement-like',time:1.7},{selector:'.engagement-subscribe',time:3.25},{selector:'.engagement-bell',time:4.8}];
+      for(const action of actions){
+        const button=find(action.selector);
+        const before=button.querySelector('.engagement-state-before');
+        const after=button.querySelector('.engagement-state-done');
+        const corners=button.querySelector('.engagement-corners');
+        tl.fromTo([button,cursor],{scale:1},{scale:.965,duration:.1,ease:'power1.in',immediateRender:false},action.time-.03);
+        tl.fromTo([button,cursor],{scale:.965},{scale:1,duration:.36,ease:'back.out(1.6)',immediateRender:false},action.time+.07);
+        tl.fromTo(button,{backgroundColor:'#fff',color:'#2455f5'},{backgroundColor:'#2455f5',color:'#fff',duration:.15,immediateRender:false},action.time);
+        tl.fromTo(before,{opacity:1},{opacity:0,duration:.1,immediateRender:false},action.time);
+        tl.fromTo(after,{opacity:0},{opacity:1,duration:.16,immediateRender:false},action.time+.07);
+        tl.fromTo(corners,{opacity:0,scale:.96},{opacity:.7,scale:1,duration:.24,ease:'power2.out',immediateRender:false},action.time);
+        tl.to(corners,{opacity:0,duration:.3,ease:'power1.out'},action.time+.27);
+      }
+      tl.fromTo(cursor,{x:152,y:91},{x:556,y:93,duration:.72,ease:'power2.inOut',immediateRender:false},2.1);
+      tl.fromTo(cursor,{x:556,y:93},{x:1016,y:94,duration:.72,ease:'power2.inOut',immediateRender:false},3.7);
+      tl.fromTo(find('.engagement-play'),{opacity:1},{opacity:0,duration:.12,immediateRender:false},3.25);
+      tl.fromTo(find('.engagement-check'),{opacity:0,scale:.8},{opacity:1,scale:1,duration:.3,ease:'back.out(1.3)',immediateRender:false},3.32);
+      tl.fromTo(find('.engagement-ring'),{opacity:0},{opacity:1,duration:.3,immediateRender:false},4.88);
+      tl.fromTo(find('.engagement-bell-body'),{rotation:-7},{rotation:7,svgOrigin:'10 5',duration:.16,ease:'sine.inOut',repeat:5,yoyo:true,immediateRender:false},4.83);
+      tl.to(find('.engagement-bell-body'),{rotation:0,duration:.22,ease:'sine.out'},5.79);
+      tl.fromTo(cursor,{x:1016,y:94,opacity:1},{x:1095,y:111,opacity:0,duration:.5,ease:'power2.inOut',immediateRender:false},5.55);
+      // Bounded ambient keyline passes keep the held state alive until exit.
+      all('.engagement-keyline').forEach((keyline,index)=>{
+        tl.fromTo(keyline,{'--shimmer-pos':'-20%'},{'--shimmer-pos':'120%',duration:1.1,ease:'none',repeat:3,repeatDelay:.8,immediateRender:false},.65+index*.28);
+      });
+      tl.fromTo(find('.engagement-caption-mark'),{opacity:.45},{opacity:1,duration:.6,ease:'sine.inOut',repeat:12,yoyo:true,immediateRender:false},.4);
+      tl.fromTo(content,{opacity:1,y:0},{opacity:0,y:12,duration:.48,ease:'power2.in',immediateRender:false},7.82);
+      window.__timelines['__CTA_ID__']=tl;
+    })();
+  </script>
+</template>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><title>Botelho Video Editor — tela final pixel</title></head>
+<body>
+<template>
+  <!-- Public edition: configurable channel label; generic source paths. -->
+  <!-- Replace EVERY __ID__ and __DURATION__ before saving in compositions/frames/.
+       Authored for a 1920×1080 canvas and a 10-second end-screen slot.
+       Suggested-video rectangles stay completely fixed, empty and exactly 16:9.
+       Keep music in the parent composition; this template adds no audio. -->
+  <style>
+    @font-face{font-family:BVEEndMono;src:url('../../assets/fonts/DepartureMono.woff2') format('woff2');font-weight:400;font-display:block}
+    @font-face{font-family:BVEEndSans;src:url('../../assets/fonts/IBMPlexSans.ttf') format('truetype');font-weight:100 900;font-display:block}
+    #__ID__{position:absolute;inset:0;width:100%;height:100%;color:#13223b;background:#fff;font-family:BVEEndSans,sans-serif;pointer-events:none}
+    #__ID__ *{box-sizing:border-box}
+    #__ID__ .end-art{position:absolute;inset:0}
+    #__ID__ .end-white{position:absolute;inset:0;background:#fff}
+    #__ID__ .end-header{position:absolute;left:230px;top:136px;width:1460px;height:230px;text-align:center}
+    #__ID__ .end-brand{position:absolute;left:0;top:0;width:100%;height:110px;display:flex;align-items:center;justify-content:center;gap:25px;color:#2455f5;font-family:BVEEndMono,monospace;font-size:74px;font-weight:400;line-height:100px;letter-spacing:1px;white-space:nowrap}
+    #__ID__ .end-brand-mark{position:relative;display:block;width:22px;height:22px;background:#2455f5;flex:0 0 22px}
+    #__ID__ .end-brand-mark:after{content:"";position:absolute;left:22px;top:22px;width:10px;height:10px;background:#b7c8ff}
+    #__ID__ .end-subscribe{position:absolute;left:0;top:128px;width:100%;height:65px;display:flex;align-items:center;justify-content:center;gap:21px;font-size:42px;font-weight:500;line-height:60px;white-space:nowrap}
+    #__ID__ .end-bell{display:block;width:42px;height:42px;color:#2455f5;fill:currentColor;flex:0 0 42px;shape-rendering:crispEdges}
+    #__ID__ .end-more{position:absolute;left:230px;top:415px;width:1460px;height:42px;display:flex;align-items:center;justify-content:center;gap:24px;color:#2455f5;font-family:BVEEndMono,monospace;font-size:23px;line-height:34px;letter-spacing:1px}
+    #__ID__ .end-more-line{display:block;width:152px;height:2px;background:#c9d5ff;transform-origin:center center}
+    #__ID__ .end-video{position:absolute;top:510px;width:670px;height:376.875px;background:#fff}
+    #__ID__ .end-video-first{left:230px}
+    #__ID__ .end-video-second{left:1020px}
+    #__ID__ .end-frame-svg{position:absolute;inset:0;display:block;width:670px;height:376.875px;overflow:visible;fill:none;stroke:#2455f5;stroke-width:2;stroke-linejoin:miter;stroke-linecap:butt}
+    #__ID__ .end-frame-corners{stroke-width:6;shape-rendering:crispEdges}
+    #__ID__ .end-video-number{position:absolute;left:0;top:-33px;width:100%;height:25px;color:#2455f5;font-family:BVEEndMono,monospace;font-size:17px;line-height:23px;letter-spacing:1px}
+    /* Adapted from registry component shimmer-sweep. This light pass lives
+       only on the 2px perimeter; white video slots and copy never flash. */
+    #__ID__ .end-frame-shimmer{position:absolute;inset:0;--shimmer-pos:-20%;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 0,2px 2px,2px calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) 2px,2px 2px);background:linear-gradient(115deg,transparent 0%,transparent calc(var(--shimmer-pos) - 9%),#9eb9ff var(--shimmer-pos),transparent calc(var(--shimmer-pos) + 9%),transparent 100%)}
+    #__ID__ .end-footer{position:absolute;left:230px;top:928px;width:1460px;height:34px;text-align:center;color:#536891;font-family:BVEEndMono,monospace;font-size:18px;line-height:30px;letter-spacing:.5px;white-space:nowrap}
+  </style>
+  <div id="__ID__" data-composition-id="__ID__" data-width="1920" data-height="1080" data-duration="__DURATION__">
+    <div id="__ID__-art" class="clip end-art" data-start="0" data-duration="__DURATION__" data-track-index="0" data-art data-full="false">
+    <div class="end-white"></div>
+    <div class="end-header">
+      <div class="end-brand"><span class="end-brand-mark" aria-hidden="true"></span><span>__CHANNEL_NAME__</span></div>
+      <div class="end-subscribe"><span>Inscreva-se e ative o sininho.</span><svg class="end-bell" viewBox="0 0 20 20" aria-label="Notificações"><path d="M8 2H12V4H14V6H15V12H17V15H3V12H5V6H6V4H8ZM8 16H12V18H8Z"/></svg></div>
+    </div>
+    <div class="end-more"><span class="end-more-line"></span><span>VEJA MAIS</span><span class="end-more-line"></span></div>
+    <div class="end-video end-video-first" aria-label="Espaço para o primeiro vídeo sugerido no YouTube">
+      <div class="end-video-number">01 / ÚLTIMOS VÍDEOS</div>
+      <svg class="end-frame-svg" viewBox="0 0 670 376.875" aria-hidden="true"><path class="end-frame-outline" d="M1 1H669V375.875H1Z"/><path class="end-frame-corners" d="M1 33V1H33M637 1H669V33M669 343.875V375.875H637M33 375.875H1V343.875"/></svg>
+      <span class="end-frame-shimmer" aria-hidden="true"></span>
+    </div>
+    <div class="end-video end-video-second" aria-label="Espaço para o segundo vídeo sugerido no YouTube">
+      <div class="end-video-number">02 / CONTINUE ASSISTINDO</div>
+      <svg class="end-frame-svg" viewBox="0 0 670 376.875" aria-hidden="true"><path class="end-frame-outline" d="M1 1H669V375.875H1Z"/><path class="end-frame-corners" d="M1 33V1H33M637 1H669V33M669 343.875V375.875H637M33 375.875H1V343.875"/></svg>
+      <span class="end-frame-shimmer" aria-hidden="true"></span>
+    </div>
+    <div class="end-footer">UMA IDEIA PUXA A PRÓXIMA.</div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      const root=document.getElementById('__ID__');
+      const all=(selector)=>root.querySelectorAll(selector);
+      const one=(selector)=>root.querySelector(selector);
+      const duration=Number('__DURATION__');
+      const tl=gsap.timeline({paused:true});
+      // Build slowly enough to read, then hold the landing geometry for the
+      // whole YouTube overlay window. No entrance repeats, no moving slots.
+      tl.fromTo(one('.end-header'),{opacity:0,y:12},{opacity:1,y:0,duration:.7,ease:'power2.out'},.05);
+      tl.fromTo(one('.end-subscribe'),{opacity:0,y:7},{opacity:1,y:0,duration:.6,ease:'power2.out'},.38);
+      tl.fromTo(one('.end-more'),{opacity:0},{opacity:1,duration:.5,ease:'power1.out'},.48);
+      tl.fromTo(all('.end-more-line'),{scaleX:0},{scaleX:1,duration:.7,ease:'power2.out'},.55);
+      all('.end-frame-outline').forEach((path,index)=>{
+        const length=path.getTotalLength();
+        tl.fromTo(path,{strokeDasharray:length,strokeDashoffset:length},{strokeDashoffset:0,duration:1.12,ease:'none'},.55+index*.12);
+      });
+      tl.fromTo(all('.end-frame-corners'),{opacity:0},{opacity:1,duration:.55,stagger:.12,ease:'power1.out'},.83);
+      tl.fromTo(all('.end-video-number'),{opacity:0,y:4},{opacity:1,y:0,duration:.5,stagger:.12,ease:'power2.out'},.7);
+      tl.fromTo(one('.end-footer'),{opacity:0},{opacity:1,duration:.65,ease:'power1.out'},1.05);
+      // Finite, independently staggered perimeter highlights keep the scene
+      // active while the actual video slots remain perfectly stationary.
+      all('.end-frame-shimmer').forEach((line,index)=>{
+        const start=1.65+index*.55;
+        for(let at=start;at<duration;at+=3.8){
+          tl.fromTo(line,{'--shimmer-pos':'-20%'},{'--shimmer-pos':'120%',duration:Math.min(2.7,duration-at),ease:'none',immediateRender:false},at);
+        }
+      });
+      const markCycles=Math.max(1,Math.ceil((duration-1.1)/1.2));
+      tl.fromTo(one('.end-brand-mark'),{opacity:.55},{opacity:1,duration:Math.max(.05,(duration-1.1)/markCycles),repeat:markCycles-1,yoyo:true,ease:'sine.inOut',immediateRender:false},1.1);
+      // End card deliberately stays visible through its last frame.
+      window.__timelines['__ID__']=tl;
+    })();
+  </script>
+</template>
+</body>
+</html>

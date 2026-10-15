@@ -1,0 +1,9 @@
+# Tela final branca com marca configurável
+
+Substitua `__CHANNEL_NAME__` pelo nome do canal, escapando caracteres especiais de HTML. Modelo em [../assets/pixel-end-screen.template.html](../assets/pixel-end-screen.template.html), 1920×1080. Substitua todas as ocorrências de `__ID__` por ID único e `__DURATION__` por `10`, gravando em `compositions/frames/end-screen.html`. Os caminhos de fontes `../../assets/fonts/DepartureMono.woff2` e `IBMPlexSans.ttf` partem dessa pasta; use fontes locais licenciadas e revalide o texto se trocar a tipografia. O pai carrega GSAP. ID do host, composição e chave de timeline são iguais; não aninhe a timeline manualmente.
+
+Monte o host com `class="clip"`, `data-start` no fim da fala, `data-duration="10"`, canvas 1920×1080 e `position:absolute;inset:0;z-index:90`, acima da câmera e barra. Aumente a duração da raiz em 10s; mantenha os vídeos de conteúdo, voz, cortes e legendas terminando no tempo anterior. Prolongue somente a trilha, verificando se o arquivo de música tem fonte suficiente, com fade nos últimos 0,75s.
+
+Espaços de vídeo: x230 e x1020, y510; ambos 670×376,875px, proporção 16:9. No canvas, posições normalizadas x11,98%/53,125%, y47,222%, largura34,896% e altura34,896%. São escolhas deste modelo, não medidas oficiais do YouTube. As molduras permanecem imóveis; o brilho percorre só a linha, sem iluminar o interior. Não coloque miniaturas ou links inventados; o usuário escolherá os vídeos e encaixará os elementos no YouTube.
+
+O template tem fundo branco, uma timeline pausada finita e nenhuma faixa de áudio. Confira a transição da fala para a tela final, snapshots a +2s, +7s e no último quadro, texto dentro dos limites, espaços vazios, música contínua e busca de trás para frente. Mantenha apenas a prévia enquanto não houver autorização explícita de exportação.

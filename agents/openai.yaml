@@ -1,0 +1,4 @@
+interface:
+  display_name: "Botelho Video Editor"
+  short_description: "Edição com HyperFrames, recorte e animações pixeladas"
+  default_prompt: "Use $botelho-video-editor para planejar e editar este vídeo com explicações visuais, câmera bem enquadrada e som discreto. Prepare uma prévia para revisão."

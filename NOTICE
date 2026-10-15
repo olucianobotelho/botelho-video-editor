@@ -1,0 +1,25 @@
+Botelho Video Editor
+Copyright 2026 Botelho Video Editor contributors
+
+The perimeter-highlight patterns in assets/pixel-engagement.template.html
+and assets/pixel-end-screen.template.html were adapted from HyperFrames
+registry shimmer-sweep patterns. The public templates modify the layout,
+timing, clipping and channel-label configuration.
+
+HyperFrames: https://github.com/heygen-com/hyperframes
+Copyright 2026 HeyGen, Inc.
+Licensed under Apache License 2.0; see LICENSES/HyperFrames-Apache-2.0.txt.
+
+External dependencies are not bundled:
+- Robust Video Matting: https://github.com/PeterL1n/RobustVideoMatting
+  Official model weights are GPL-3.0. The optional downloader preserves
+  the upstream license next to the downloaded weights.
+- ONNX Runtime: https://github.com/microsoft/onnxruntime
+- FFmpeg: https://ffmpeg.org/
+- GSAP: https://gsap.com/community/standard-license/
+- Departure Mono: https://github.com/rektdeckard/departure-mono (SIL OFL)
+- IBM Plex: https://github.com/IBM/plex (SIL OFL)
+
+The two bundled CTA WAV files are locally synthesized PCM sounds, with
+no speech or third-party recordings. They are distributed under this
+package's Apache-2.0 license.
